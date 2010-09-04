@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'daemonchild'
+
+DaemonChild.spawn
+
+1.upto(10) do |x|
+  sleep 10
+end
+
