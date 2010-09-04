@@ -15,6 +15,12 @@ class DaemonChild
   VERSION = '0.0.1'
 
   def self.spawn()
+    # Exit fast if in app that presents itself as irb
+    # as a rudimentary safety check.  if irb daemonizes and gets
+    # /dev/null as STDIN, it chews up all the cpu trying to take input
+    # but you really shouldn't daemonize irb anyway
+    exit if $0 == 'irb'
+    
     cwd = Dir.getwd
 
     # Fork so the parent can exit
