@@ -1,0 +1,8 @@
+CHANGELOG
+Manifest.txt
+README
+LICENSE
+Rakefile
+bin/daemonchild
+lib/daemonchild.rb
+test/test_daemonchild.rb

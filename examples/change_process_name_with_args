@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require '../lib/daemonchild'
+
+DaemonChild.spawn
+
+args = $*.join(' ')
+$0 = "my_new_process_name #{args}"
+1.upto(10) do |x|
+  sleep 10
+end
+
