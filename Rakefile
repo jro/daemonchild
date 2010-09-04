@@ -1,11 +1,10 @@
 # -*- ruby -*-
 
 require 'rubygems'
-require 'hoe'
+require 'rake/gempackagetask'
+require 'rake/testtask'
+require 'rake/packagetask'
+require 'rake/rdoctask'
 
-Hoe.spec 'daemonchild' do
-  developer('Jason Rohwedder', 'jro@badgerhound.com')
-end
 
-# vim? you don't see me putting a modeline in here... 
 # vim: syntax=ruby
