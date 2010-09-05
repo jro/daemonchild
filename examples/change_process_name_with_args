@@ -4,8 +4,14 @@ require '../lib/daemonchild'
 
 DaemonChild.spawn
 
-args = $*.join(' ')
-$0 = "my_new_process_name #{args}"
+args = ARGV.join(' ')
+
+DaemonChild.process_name ="my_new_process_name #{args}"
+# this is mostly for show.  it seems that we lose the args in 'ps' when we 
+# update the process name, so what we're doing here is stuffing them into
+# the script name so that they appear
+
+# do something just to run for a while
 1.upto(10) do |x|
   sleep 10
 end

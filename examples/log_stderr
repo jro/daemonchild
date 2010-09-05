@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require '../lib/daemonchild'
+
+DaemonChild.spawn
+DaemonChild.stderr = 'stderr.log'
+# turn off buffering to STDERR (optional)
+STDERR.sync = true
+
+1.upto(10) do |x|
+  sleep 10
+  throw SomeException 
+  # we should see an exception in the log
+end
+

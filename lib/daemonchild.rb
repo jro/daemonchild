@@ -58,4 +58,23 @@ class DaemonChild
     return Process.pid
   end
 
+  def self.process_name
+    $0
+  end
+  
+  def self.process_name=(name)
+    $0 = name
+  end
+
+  def self.stdin=(fp)
+    STDIN.reopen fp
+  end
+
+  def self.stdout=(fp)
+    STDOUT.reopen fp
+  end
+
+  def self.stderr=(fp)
+    STDERR.reopen fp
+  end
 end

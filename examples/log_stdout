@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require '../lib/daemonchild'
+
+DaemonChild.spawn
+DaemonChild.stdout = 'stdout.log'
+# turn off buffering to stderr.  (optional)
+STDOUT.sync = true
+
+1.upto(10) do |x|
+  sleep 10
+  puts x
+end
+
