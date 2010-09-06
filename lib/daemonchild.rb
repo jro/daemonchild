@@ -7,7 +7,7 @@
 # Daemonize was written by Travis Whitton and is based on Perl's
 # Proc::Daemonize, which was written by Earl Hood.  
 #
-# Also, Based on the Unix Programmer FAQ which is currently available
+# Also based on the Unix Programmer FAQ which is currently available
 # http://www.faqs.org/faqs/unix-faq/programmer/faq/
 # (and other places I'm sure)
 
