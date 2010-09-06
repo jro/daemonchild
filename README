@@ -42,6 +42,7 @@ options:
 
 * http://daemons.rubyforge.org/
 * http://github.com/TwP/servolux
+* http://github.com/alexvollmer/daemon-spawn
 
 == LICENSE
 
