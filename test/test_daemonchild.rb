@@ -1,5 +1,5 @@
 require "test/unit"
-require "daemonchild"
+require "lib/daemonchild.rb"
 
 class TestDaemonChild < Test::Unit::TestCase
   # i want to write tests I really do
