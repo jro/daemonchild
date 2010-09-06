@@ -5,21 +5,43 @@ Ruby.
 
 * http://github.com/jro/daemonchild
 
-== FEATURES/PROBLEMS:
+Having written a few daemons in the past using the 'daemons' gem, I've 
+always found it to be a bit to heavy-weight for me.  You can write a 
+great, stable daemon based on it, but I've longed for something that 
+felt more Unix-ey.  Does one thing, and (hopefully) does it well: turn
+your ruby script into a daemon.  This project is my attempt at that.
 
-* There aren't a lot.  It should just turn the running script into a
+== FEATURES 
+
+* There aren't many.  It should just turn the running script into a
   daemon.  From there it's all on you.  
 
-== SYNOPSIS:
+== SYNOPSIS
 
   require 'DaemonChild'
 
   DaemonChild.spawn
   <insert your code here>
 
-== INSTALL:
+== INSTALL
 
 * gem install daemonchild
+
+== TODO
+
+Use the examples/ as a basis for tests
+
+== KNOWN ISSUES
+
+None (yet)!
+
+== OTHER OPTIONS
+
+In case DaemonChild doesn't fit your needs, here are some other 
+options:
+
+* http://daemons.rubyforge.org/
+* http://github.com/TwP/servolux
 
 == LICENSE
 
