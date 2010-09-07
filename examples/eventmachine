@@ -17,6 +17,7 @@ Syslog.info 'Starting up!'
 
 Signal.trap("TERM") do
   Syslog.info 'Shutting down'
+  exit
 end
 # this would be useful for doing some cleanup work on shutdown
 # or you might want to trap for HUP and reload your config
