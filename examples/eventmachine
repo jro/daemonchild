@@ -5,12 +5,20 @@ require 'daemonchild'
 require 'syslog'
 
 debug = ARGV.include? '--debug'
+logpid = ARGV.include?('--log-pid')
+# important to deal with the command line args before damonizing
 
 DaemonChild.spawn unless debug
 # useful if your daemon is dying in a way that your logging doesn't capture
 # as by default we set STDOUT and STDERR to /dev/null
 
-Syslog.open('daemonchild_em_sample', Syslog::LOG_PID | Syslog::LOG_CONS, Syslog::LOG_DAEMON)
+if logpid then
+  pidfile = File.new('/var/run/echo-server.pid','w+')
+  pidfile << Process.pid
+  pidfile.close
+end
+
+Syslog.open('echo-server', Syslog::LOG_PID | Syslog::LOG_CONS, Syslog::LOG_DAEMON)
 # check out the syslog(3) on a *nix machine to get a good description of the constants
 # the rdoc for syslog in ruby is very very sparse
 Syslog.info 'Starting up!'
